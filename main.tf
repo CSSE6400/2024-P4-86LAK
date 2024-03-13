@@ -27,6 +27,7 @@ resource "aws_instance" "hextris-server" {
     Name = "hextris"
   }
   user_data = file("./serve-hextris.sh")
+  security_groups = [aws_security_group.hextris-server.name]
 }
 
 
